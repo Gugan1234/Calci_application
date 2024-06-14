@@ -3,6 +3,12 @@ from kivy.uix.widget import Widget
 from kivy.core.window import Window
 from kivy.lang.builder import Builder
 import re
+from distutils.core import setup
+from Cython.Build import cythonize
+ext_modules = cythonize(
+               extensions, 
+               compiler_directives={'language_level' : "3"}   # or "2" or "3str"
+             ) 
 
 Builder.load_file('./calci.kv')
 
